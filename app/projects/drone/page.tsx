@@ -1,6 +1,13 @@
 import LightboxImage from '@/app/components/LightboxImage';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { FaArrowLeft } from 'react-icons/fa';
+
+export const metadata: Metadata = {
+  title: 'Autonomous AI Drone Platform | Leonardo Chimal',
+  description:
+    'Case study: modular 5-inch autonomous drone platform designed in Onshape with embedded electronics, power distribution, vibration-isolated mounting, and Raspberry Pi 5 autonomous expansion. Thrust-to-weight ratio of 4.7:1.',
+};
 
 const specs = [
   { label: 'Total Mass', value: '856g', note: 'From CAD model' },

@@ -1,6 +1,13 @@
 import LightboxImage from '@/app/components/LightboxImage';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { FaArrowLeft, FaGithub } from 'react-icons/fa';
+
+export const metadata: Metadata = {
+  title: 'Cutting Edge Appointments | Leonardo Chimal',
+  description:
+    'Case study: full-stack barber shop booking system built for real local business use. Next.js 16, TypeScript, Drizzle ORM, MySQL, NextAuth, Google OAuth, Tailwind CSS.',
+};
 
 const techStack = [
   { label: 'Framework', value: 'Next.js 16 (App Router)' },

@@ -1,6 +1,13 @@
 import LightboxImage from '@/app/components/LightboxImage';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { FaArrowLeft, FaExternalLinkAlt } from 'react-icons/fa';
+
+export const metadata: Metadata = {
+  title: 'Meta Quest SlideLock Attachment | Leonardo Chimal',
+  description:
+    'Case study: custom Meta Quest dual-controller slide-lock attachment designed and prototyped through iterative CAD development in Onshape and PETG 3D printing. Published on MakerWorld.',
+};
 
 const photos = [
   { src: '/projects/meta-quest/in-hand-1.webp', alt: 'Assembled attachment held in both hands' },

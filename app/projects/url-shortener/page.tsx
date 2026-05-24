@@ -1,5 +1,12 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { FaArrowLeft, FaLock } from 'react-icons/fa';
+
+export const metadata: Metadata = {
+  title: 'Enterprise URL Shortening Platform | Leonardo Chimal',
+  description:
+    'Case study: production-grade internal URL shortening platform built at John Deere. Next.js 16, TypeScript, tRPC, Rust (Hyper/Tokio), Drizzle ORM, MySQL, Okta SSO, AWS ECS Fargate, Kinesis, Terraform. ~750 Vitest tests.',
+};
 
 const techStack = [
   { label: 'Frontend / API', value: 'Next.js 16 (App Router), React 19, tRPC, Material-UI v7' },

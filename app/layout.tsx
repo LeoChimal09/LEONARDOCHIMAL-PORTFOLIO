@@ -13,10 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  // TODO: Update with your name and tagline
-  title: "Leonardo Chimal | Software Engineer",
+  title: 'Leonardo Chimal | Engineering Student & CS Developer',
   description:
-    "Portfolio of Leonardo Chimal — Software Engineer & Computer Scientist specializing in scalable systems and full-stack development.",
+    'Portfolio of Leonardo Chimal — engineering student at Black Hawk College and CS developer. CAD design, drone systems, full-stack web development, Rust, AWS, and Terraform.',
 };
 
 export default function RootLayout({
