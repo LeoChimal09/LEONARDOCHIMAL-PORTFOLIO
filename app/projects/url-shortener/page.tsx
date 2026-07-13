@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import CaseStudyHeader from '@/app/components/CaseStudyHeader';
 import { FaArrowLeft, FaLock } from 'react-icons/fa';
 
 export const metadata: Metadata = {
@@ -20,6 +21,8 @@ const techStack = [
   { label: 'Testing', value: 'Vitest + Testing Library (~750 tests)' },
   { label: 'CI/CD', value: 'GitHub Actions' },
 ];
+
+const tags = ['Next.js 16', 'TypeScript', 'tRPC', 'Rust', 'Drizzle ORM', 'MySQL', 'Okta SSO', 'AWS Fargate', 'Terraform', 'Kinesis', 'Vitest'];
 
 const urlTypes = [
   {
@@ -91,40 +94,30 @@ const uxFeatures = [
 
 export default function UrlShortenerPage() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white">
-      {/* Back nav */}
-      <div className="max-w-5xl mx-auto px-6 pt-8">
-        <Link
-          href="/#projects"
-          className="inline-flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors text-sm font-mono"
-        >
-          <FaArrowLeft size={12} />
-          cd ../projects
-        </Link>
-      </div>
-
-      {/* Hero */}
-      <section className="max-w-5xl mx-auto px-6 pt-12 pb-16">
-        <p className="text-blue-400 font-mono text-xs tracking-widest uppercase mb-3">John Deere — Internal Tool</p>
-        <h1 className="text-4xl font-bold text-white mb-4">Enterprise URL Shortening Platform</h1>
-        <p className="text-slate-400 text-lg leading-relaxed max-w-3xl mb-6">
-          A production-grade internal URL shortening service built for large-organization use. Goes far beyond short links — supporting device-aware redirects, regex-based routing, team ownership, admin governance, audit trails, an async Rust redirect service, and a full analytics pipeline backed by AWS.
-        </p>
-        <div className="inline-flex items-center gap-2 bg-slate-800 border border-slate-700 rounded-full px-4 py-1.5 text-slate-400 text-sm font-mono">
+    <main className="page-shell">
+      <CaseStudyHeader
+        eyebrow="John Deere - Internal Tool"
+        title="Enterprise URL Shortening Platform"
+        lead="A production-grade internal URL shortening service built for large-organization use."
+        summary="Goes far beyond short links - supporting device-aware redirects, regex-based routing, team ownership, admin governance, audit trails, an async Rust redirect service, and a full analytics pipeline backed by AWS."
+        tags={tags}
+        actions={(
+          <div className="inline-flex items-center gap-2 bg-slate-900/80 border border-slate-700 rounded-full px-4 py-2 text-slate-400 text-sm font-mono">
           <FaLock size={11} />
           Internal project — no public repository or live demo
-        </div>
-      </section>
+          </div>
+        )}
+      />
 
       {/* 4 URL Types */}
-      <section className="bg-slate-900 border-y border-slate-800 py-16">
-        <div className="max-w-5xl mx-auto px-6">
+      <section className="page-section pt-0">
+        <div className="page-container">
           <h2 className="text-2xl font-bold text-white mb-2">4 URL Types</h2>
           <p className="text-slate-400 mb-8">Each type has dedicated creation UI, validation rules, and redirect logic in the Rust service.</p>
           <div className="grid sm:grid-cols-2 gap-5">
             {urlTypes.map((t) => (
-              <div key={t.name} className="bg-slate-800 border border-slate-700 rounded-lg p-5">
-                <h3 className="text-blue-400 font-semibold mb-2">{t.name}</h3>
+              <div key={t.name} className="panel-card-soft rounded-xl p-5">
+                <h3 className="text-sky-300 font-semibold mb-2">{t.name}</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">{t.description}</p>
               </div>
             ))}
@@ -133,8 +126,8 @@ export default function UrlShortenerPage() {
       </section>
 
       {/* Rust Redirect Service */}
-      <section className="py-16">
-        <div className="max-w-5xl mx-auto px-6">
+      <section className="page-section pt-0">
+        <div className="page-container">
           <h2 className="text-2xl font-bold text-white mb-2">Rust Redirect Service</h2>
           <p className="text-slate-400 mb-8">
             A standalone HTTP server built with <span className="text-amber-400 font-mono">Hyper + Tokio</span> handles all actual redirects, completely separate from the Next.js app. Designed to stay out of the hot path while feeding rich analytics asynchronously.
@@ -151,8 +144,8 @@ export default function UrlShortenerPage() {
       </section>
 
       {/* Analytics Pipeline */}
-      <section className="bg-slate-900 border-y border-slate-800 py-16">
-        <div className="max-w-5xl mx-auto px-6">
+      <section className="page-section pt-0">
+        <div className="page-container">
           <h2 className="text-2xl font-bold text-white mb-2">Analytics Pipeline</h2>
           <p className="text-slate-400 mb-8">
             Every redirect event flows asynchronously from the Rust service into a serverless data lake — zero impact on redirect latency.
@@ -177,7 +170,7 @@ export default function UrlShortenerPage() {
 
       {/* Auth & Ownership */}
       <section className="py-16">
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="page-container">
           <h2 className="text-2xl font-bold text-white mb-2">Auth & Authorization</h2>
           <p className="text-slate-400 mb-8">Okta SSO with group-based ownership — not just user-level permissions.</p>
           <ul className="space-y-3">
@@ -192,8 +185,8 @@ export default function UrlShortenerPage() {
       </section>
 
       {/* URL Management UI */}
-      <section className="bg-slate-900 border-y border-slate-800 py-16">
-        <div className="max-w-5xl mx-auto px-6">
+      <section className="page-section pt-0">
+        <div className="page-container">
           <h2 className="text-2xl font-bold text-white mb-2">URL Management UI</h2>
           <p className="text-slate-400 mb-8">A full-featured data table with server-side search, filtering, and multi-select actions.</p>
           <ul className="space-y-3">
@@ -208,41 +201,41 @@ export default function UrlShortenerPage() {
       </section>
 
       {/* Admin & Governance */}
-      <section className="py-16">
-        <div className="max-w-5xl mx-auto px-6">
+      <section className="page-section pt-0">
+        <div className="page-container">
           <h2 className="text-2xl font-bold text-white mb-8">Admin & Governance</h2>
           <div className="grid sm:grid-cols-3 gap-5">
-            <div className="bg-slate-800 border border-slate-700 rounded-lg p-5">
+            <div className="panel-card-soft rounded-xl p-5">
               <h3 className="text-white font-semibold mb-3">Approval Workflow</h3>
               <p className="text-slate-400 text-sm leading-relaxed">
                 Non-admin users submit change requests for URLs they don&apos;t own. Admins review pending/approved/denied requests in a dedicated queue. Approval directly applies the change.
               </p>
             </div>
-            <div className="bg-slate-800 border border-slate-700 rounded-lg p-5">
+            <div className="panel-card-soft rounded-xl p-5">
               <h3 className="text-white font-semibold mb-3">URL Blocking</h3>
               <p className="text-slate-400 text-sm leading-relaxed">
                 Admins can block any URL (redirects 404 immediately), unblock it, or mark URLs as LOCKED — served normally but protected from modification.
               </p>
             </div>
-            <div className="bg-slate-800 border border-slate-700 rounded-lg p-5">
+            <div className="panel-card-soft rounded-xl p-5">
               <h3 className="text-white font-semibold mb-3">Audit Log</h3>
               <p className="text-slate-400 text-sm leading-relaxed">
                 Append-only compliance history with 13 tracked action types. Stores actor identity, timestamp, action, entity alias, and a full JSON snapshot of the entity at time of change.
               </p>
             </div>
-            <div className="bg-slate-800 border border-slate-700 rounded-lg p-5">
+            <div className="panel-card-soft rounded-xl p-5">
               <h3 className="text-white font-semibold mb-3">Vanity Host Management</h3>
               <p className="text-slate-400 text-sm leading-relaxed">
                 Register and manage custom domains as vanity hosts — SSL status tracking, group ownership, soft delete/restore, DNS A-record/CNAME live lookup, and search.
               </p>
             </div>
-            <div className="bg-slate-800 border border-slate-700 rounded-lg p-5">
+            <div className="panel-card-soft rounded-xl p-5">
               <h3 className="text-white font-semibold mb-3">QR Code Generator</h3>
               <p className="text-slate-400 text-sm leading-relaxed">
                 Standalone page and inline modal. Generates downloadable QR codes for any short URL. Includes an accessibility contrast checker for foreground/background color combinations.
               </p>
             </div>
-            <div className="bg-slate-800 border border-slate-700 rounded-lg p-5">
+            <div className="panel-card-soft rounded-xl p-5">
               <h3 className="text-white font-semibold mb-3">Campaign Tracking Builder</h3>
               <p className="text-slate-400 text-sm leading-relaxed">
                 Configurable URL builder that composes tracking parameter values from admin-defined fields (dropdowns, text, date pickers, fiscal year selectors) into a formatted query string.
@@ -253,8 +246,8 @@ export default function UrlShortenerPage() {
       </section>
 
       {/* Security */}
-      <section className="bg-slate-900 border-y border-slate-800 py-16">
-        <div className="max-w-5xl mx-auto px-6">
+      <section className="page-section pt-0">
+        <div className="page-container">
           <h2 className="text-2xl font-bold text-white mb-2">Security Highlights</h2>
           <p className="text-slate-400 mb-8">Defense-in-depth across the redirect service, API layer, and database queries.</p>
           <ul className="space-y-3">
@@ -269,8 +262,8 @@ export default function UrlShortenerPage() {
       </section>
 
       {/* UX Polish */}
-      <section className="py-16">
-        <div className="max-w-5xl mx-auto px-6">
+      <section className="page-section pt-0">
+        <div className="page-container">
           <h2 className="text-2xl font-bold text-white mb-2">UX Polish</h2>
           <p className="text-slate-400 mb-8">Quality-of-life features that make day-to-day use significantly faster.</p>
           <ul className="space-y-3">
@@ -285,8 +278,8 @@ export default function UrlShortenerPage() {
       </section>
 
       {/* Tech Stack */}
-      <section className="bg-slate-900 border-y border-slate-800 py-16">
-        <div className="max-w-5xl mx-auto px-6">
+      <section className="page-section pt-0">
+        <div className="page-container">
           <h2 className="text-2xl font-bold text-white mb-8">Tech Stack</h2>
           <div className="overflow-x-auto rounded-lg border border-slate-700">
             <table className="w-full text-sm">
@@ -310,10 +303,10 @@ export default function UrlShortenerPage() {
       </section>
 
       {/* Footer nav */}
-      <div className="max-w-5xl mx-auto px-6 py-12">
+      <div className="page-container px-6 py-12">
         <Link
-          href="/#projects"
-          className="inline-flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors text-sm font-mono"
+          href="/projects"
+          className="inline-flex items-center gap-2 text-slate-400 hover:text-sky-300 transition-colors text-sm font-mono"
         >
           <FaArrowLeft size={12} />
           Back to projects
