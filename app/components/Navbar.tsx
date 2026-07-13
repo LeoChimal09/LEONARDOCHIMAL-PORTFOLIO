@@ -1,14 +1,15 @@
 'use client';
 
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 const navLinks = [
-  { label: 'About', href: '#about' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'About', href: '/#about' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Experience', href: '/experience' },
+  { label: 'Skills', href: '/experience#skills' },
+  { label: 'Contact', href: '/#contact' },
 ];
 
 export default function Navbar() {
@@ -29,20 +30,20 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo / Initials */}
-        <a href="#" className="text-white font-bold text-xl tracking-tight font-mono">
+        <Link href="/" className="text-white font-bold text-xl tracking-tight font-mono">
           &lt;LC /&gt;
-        </a>
+        </Link>
 
         {/* Desktop links */}
         <div className="hidden md:flex gap-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="text-slate-300 hover:text-blue-400 transition-colors text-sm font-medium"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -70,14 +71,14 @@ export default function Navbar() {
       {menuOpen && (
         <div className="md:hidden bg-slate-900 border-t border-slate-800 px-6 pb-6 flex flex-col gap-4 pt-4">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="text-slate-300 hover:text-blue-400 transition-colors py-1"
               onClick={() => setMenuOpen(false)}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <a
             href="/resume.pdf"

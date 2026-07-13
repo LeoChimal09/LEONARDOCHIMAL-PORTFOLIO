@@ -1,14 +1,15 @@
 import Link from 'next/link';
 import { FaGithub, FaExternalLinkAlt, FaArrowRight, FaCog, FaCode, FaWrench } from 'react-icons/fa';
+import Reveal from './Reveal';
 
 const projects = [
   {
     title: 'Autonomous AI Drone Platform',
     description:
-      'Designed and prototyped a modular 5-inch autonomous drone platform in Onshape integrating embedded electronics, power distribution, vibration-isolated mounting systems, and future autonomous system integration (Raspberry Pi 5, GPS, computer vision). Focused on iterative CAD development, component integration, weight optimization, and maintainable mechanical design. Thrust-to-weight ratio of 4.7:1 with an estimated 8–12 min flight time.',
+      'Designed and prototyped a modular 5-inch autonomous drone platform in Onshape integrating embedded electronics, power distribution, vibration-aware mounting, maintainable mechanical design, and future autonomous system integration. Moved from CAD into bench assembly by soldering motor leads to the ESC, routing power, and learning the transmitter-to-receiver-to-flight-controller-to-ESC communication path.',
     techGroups: {
-      engineering: ['Onshape', 'CAD', '3D Printing', 'PETG', 'Embedded Systems'],
-      cs: ['Python', 'Raspberry Pi'],
+      engineering: ['Onshape', 'CAD', '3D Printing', 'ESC Soldering', 'Power Distribution', 'Mechanical Design'],
+      cs: ['ELRS', 'Python', 'Raspberry Pi'],
     },
     github: '',
     live: '',
@@ -16,11 +17,11 @@ const projects = [
     featured: true,
   },
   {
-    title: 'Meta Quest Dual Controller SlideLock Attachment',
+    title: 'Meta Quest Dual Controller Slide-Lock Attachment',
     description:
-      'Designed and prototyped a custom Meta Quest dual-controller slide-lock attachment improving two-handed stability, ergonomic handling, and mechanical locking functionality. Developed multiple design iterations using Onshape and PETG 3D printing to refine usability, structural durability, and controller alignment accuracy. Published and available on MakerWorld.',
+      'Designed and prototyped a custom Meta Quest dual-controller slide-lock attachment focused on improving two-handed stability, ergonomic handling, and mechanical locking functionality through iterative CAD development and physical testing. Developed multiple Onshape and 3D printing iterations to refine usability, structural durability, and controller alignment accuracy.',
     techGroups: {
-      engineering: ['Onshape', 'CAD', '3D Printing', 'PETG', 'Product Design', 'Ergonomics'],
+      engineering: ['Onshape', 'CAD', '3D Printing', 'Product Design', 'Ergonomics'],
       cs: [],
     },
     github: '',
@@ -39,6 +40,32 @@ const projects = [
     github: 'https://github.com/LeoChimal09/APPOINTMENT_PROJECT',
     live: '',
     detailPage: '/projects/cutting-edge',
+    featured: true,
+  },
+  {
+    title: 'Zacatika Restaurant Platform',
+    description:
+      'A full-stack restaurant web platform with a polished public experience, menu and ordering flows, reservations, gallery, events, live business hours, admin dashboards, reports, and production data workflows. Built as a reusable local-business pattern for restaurant clients.',
+    techGroups: {
+      engineering: [],
+      cs: ['Next.js 16', 'TypeScript', 'Drizzle ORM', 'MySQL', 'NextAuth', 'Resend', 'Admin Dashboards'],
+    },
+    github: '',
+    live: 'https://restaurantproject-production-630b.up.railway.app/',
+    detailPage: '/projects/zacatika',
+    featured: true,
+  },
+  {
+    title: 'WebsterLocale',
+    description:
+      'Founded and built a local website studio platform for restaurants, barbershops, salons, and service businesses. The product combines a public request site with internal operations tooling: client request intake, business opportunity tracking, admin lead management, employee assignments, outreach status workflows, email notifications, and Railway deployment.',
+    techGroups: {
+      engineering: [],
+      cs: ['Next.js 16', 'TypeScript', 'Drizzle ORM', 'MySQL', 'NextAuth', 'Nodemailer', 'Railway'],
+    },
+    github: '',
+    live: 'https://websterlocale-production.up.railway.app/',
+    detailPage: '/projects/websterlocale',
     featured: true,
   },
   {
@@ -73,99 +100,76 @@ export default function Projects() {
   const others = projects.filter((p) => !p.featured);
 
   return (
-    <section id="projects" className="py-24 bg-slate-950 px-6">
-      <div className="max-w-5xl mx-auto">
-        {/* Section header */}
-        <div className="text-center mb-16">
-          <p className="text-blue-400 font-mono text-sm tracking-widest uppercase mb-2">
-            Things I&apos;ve Built
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white">Projects</h2>
-          <div className="w-12 h-0.5 bg-blue-500 mx-auto mt-4" />
-        </div>
-
-        {/* Featured projects */}
-        <div className="space-y-8 mb-16">
+    <section id="projects" className="page-section pt-0">
+      <div className="page-container">
+        <div className="grid gap-5 lg:grid-cols-2 mb-16">
           {featured.map((project, index) => (
-            <div
-              key={project.title}
-              className={`relative bg-slate-800 border border-slate-700 rounded-xl p-6 md:p-8 hover:border-blue-500/50 transition-all hover:shadow-xl hover:shadow-blue-900/20 ${
-                index % 2 === 0 ? 'md:ml-0 md:mr-12' : 'md:ml-12 md:mr-0'
-              }`}
-            >
-              <p className="text-blue-400 font-mono text-xs tracking-widest uppercase mb-2">
-                Featured Project
-              </p>
-              <div className="flex items-start justify-between gap-4 flex-wrap">
-                <h3 className="text-white text-xl font-bold">{project.title}</h3>
-                <div className="flex gap-4">
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-slate-400 hover:text-white transition-colors"
-                      aria-label="GitHub"
-                    >
-                      <FaGithub size={20} />
-                    </a>
-                  )}
-                  {project.live && (
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`transition-colors ${project.techGroups.engineering.length > 0 ? 'text-amber-500/60 hover:text-amber-400' : 'text-slate-400 hover:text-blue-400'}`}
-                      aria-label="Live demo"
-                    >
-                      {project.techGroups.engineering.length > 0
-                        ? <FaWrench size={17} />
-                        : <FaExternalLinkAlt size={18} />}
-                    </a>
-                  )}
+            <Reveal key={project.title} delay={index * 70}>
+              <article className="panel-card group h-full rounded-2xl p-6 md:p-8 transition hover:-translate-y-1 hover:border-sky-400/50">
+                <div className="mb-5 flex items-start justify-between gap-5">
+                  <div>
+                    <p className="page-eyebrow mb-3 text-[10px]">Featured Project</p>
+                    <h2 className="text-2xl font-bold text-white tracking-tight group-hover:text-sky-200 transition-colors">
+                      {project.title}
+                    </h2>
+                  </div>
+                  <div className="flex gap-4 pt-1">
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-slate-400 hover:text-white transition-colors"
+                        aria-label="GitHub"
+                      >
+                        <FaGithub size={20} />
+                      </a>
+                    )}
+                    {project.live && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`transition-colors ${project.techGroups.engineering.length > 0 ? 'text-amber-400/75 hover:text-amber-300' : 'text-slate-400 hover:text-sky-300'}`}
+                        aria-label="Live demo"
+                      >
+                        {project.techGroups.engineering.length > 0
+                          ? <FaWrench size={17} />
+                          : <FaExternalLinkAlt size={18} />}
+                      </a>
+                    )}
+                  </div>
                 </div>
-              </div>
-              <p className="text-slate-400 mt-3 leading-relaxed">{project.description}</p>
-              {'detailPage' in project && project.detailPage && (
-                <Link
-                  href={project.detailPage as string}
-                  className="inline-flex items-center gap-1.5 mt-4 text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors group"
-                >
-                  View Case Study
-                  <FaArrowRight size={11} className="group-hover:translate-x-1 transition-transform" />
-                </Link>
-              )}
-              <div className="flex flex-col gap-2 mt-4">
-                {project.techGroups.engineering.length > 0 && (
-                  <div className="flex flex-wrap items-center gap-1.5">
-                    <FaCog size={11} className="text-amber-500 shrink-0" />
-                    {project.techGroups.engineering.map((t) => (
-                      <span key={t} className="px-2.5 py-0.5 text-amber-300 font-mono text-xs border border-amber-800/50 rounded-full bg-amber-900/20">{t}</span>
-                    ))}
-                  </div>
+                <p className="page-copy text-sm mb-6">{project.description}</p>
+                <div className="mb-6 flex flex-wrap gap-2">
+                  {project.techGroups.engineering.map((t) => (
+                    <span key={t} className="pill-tag border-amber-500/30 bg-amber-950/30 text-amber-200">{t}</span>
+                  ))}
+                  {project.techGroups.cs.map((t) => (
+                    <span key={t} className="pill-tag">{t}</span>
+                  ))}
+                </div>
+                {'detailPage' in project && project.detailPage && (
+                  <Link
+                    href={project.detailPage as string}
+                    className="inline-flex items-center gap-1.5 text-sky-300 hover:text-white text-sm font-medium transition-colors"
+                  >
+                    View case study
+                    <FaArrowRight size={11} className="transition-transform group-hover:translate-x-1" />
+                  </Link>
                 )}
-                {project.techGroups.cs.length > 0 && (
-                  <div className="flex flex-wrap items-center gap-1.5">
-                    <FaCode size={11} className="text-blue-400 shrink-0" />
-                    {project.techGroups.cs.map((t) => (
-                      <span key={t} className="px-2.5 py-0.5 text-blue-300 font-mono text-xs border border-blue-800/50 rounded-full bg-blue-900/20">{t}</span>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
+              </article>
+            </Reveal>
           ))}
         </div>
 
-        {/* Other projects grid */}
-        <h3 className="text-center text-slate-400 text-sm font-mono uppercase tracking-widest mb-8">
-          Other Noteworthy Projects
-        </h3>
+        <div className="accent-line mb-10" />
+        <h2 className="page-eyebrow mb-8">Other Noteworthy Projects</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {others.map((project) => (
             <div
               key={project.title}
-              className="bg-slate-800 border border-slate-700 rounded-lg p-5 flex flex-col hover:border-blue-500/50 transition-all hover:-translate-y-1"
+              className="panel-card-soft rounded-xl p-5 flex flex-col hover:border-sky-400/45 transition-all hover:-translate-y-1"
             >
               <div className="flex items-center justify-between mb-4">
                 <span className="text-blue-400 text-2xl">◈</span>
@@ -200,17 +204,13 @@ export default function Projects() {
                 {project.techGroups.engineering.length > 0 && (
                   <div className="flex flex-wrap items-center gap-1.5">
                     <FaCog size={10} className="text-amber-500 shrink-0" />
-                    {project.techGroups.engineering.map((t) => (
-                      <span key={t} className="text-amber-400/70 font-mono text-xs">{t}</span>
-                    ))}
+                    {project.techGroups.engineering.map((t) => <span key={t} className="pill-tag border-amber-500/30 bg-amber-950/30 text-amber-200">{t}</span>)}
                   </div>
                 )}
                 {project.techGroups.cs.length > 0 && (
                   <div className="flex flex-wrap items-center gap-1.5">
                     <FaCode size={10} className="text-blue-400 shrink-0" />
-                    {project.techGroups.cs.map((t) => (
-                      <span key={t} className="text-slate-500 font-mono text-xs">{t}</span>
-                    ))}
+                    {project.techGroups.cs.map((t) => <span key={t} className="pill-tag">{t}</span>)}
                   </div>
                 )}
               </div>

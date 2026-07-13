@@ -1,16 +1,36 @@
+import Link from 'next/link';
+import { FaArrowRight } from 'react-icons/fa';
+import Reveal from './Reveal';
+
 const experiences = [
+  {
+    role: 'Founder & Full-Stack Developer',
+    company: 'WebsterLocale',
+    location: 'East Moline, Illinois',
+    period: '2026 – Present',
+    description: [
+      'Founded a local website studio for restaurants, barbershops, salons, and service businesses that need polished websites, booking flows, ordering systems, request capture, and admin dashboards.',
+      'Built the WebsterLocale platform with Next.js 16, TypeScript, Drizzle ORM, MySQL, NextAuth, Google OAuth, SMTP email, and Railway deployment workflows.',
+      'Developed an internal business pipeline and CRM workflow that tracks outreach status, assigns opportunities, stores notes, and manages client website requests.',
+      'Combined software engineering with business operations: positioning services, designing client intake, building reusable local-business product patterns, and preparing a repeatable sales pipeline.',
+    ],
+    tech: ['Next.js 16', 'TypeScript', 'Drizzle ORM', 'MySQL', 'NextAuth', 'Railway'],
+  },
   {
     role: 'Apprentice IT',
     company: 'John Deere',
     location: 'Moline, Illinois',
     period: 'June 2024 – Present',
     description: [
-      'Built internal tools and automation workflows using AWS, Terraform, JavaScript, and API integrations to support scalable technical systems.',
-      'Designed and deployed a secure URL shortener with metadata tracking, encode/decode logic, and backend performance improvements for internal use.',
-      'Collaborated with cross-functional teams through GitHub and Agile workflows to troubleshoot issues, document changes, and improve system reliability.',
-      'Gained hands-on experience in a professional engineering environment focused on technical problem-solving, documentation, and production-ready solutions.',
+      'Developed internal tools and automation workflows using AWS, Terraform, JavaScript, and API integrations to support scalable backend systems and reduce manual processes.',
+      'Designed and deployed a production-grade internal URL shortening platform with multiple URL types, metadata tracking, vanity and pattern redirects, admin governance, QR generation, and backend performance improvements.',
+      'Learned to reason through enterprise system design by separating the Next.js management app from a Rust redirect service, then connecting both to MySQL, Okta SSO, group ownership, and role-based access rules.',
+      'Built cloud and analytics workflows with AWS Lambda, SNS, SQS, ECS Fargate, Kinesis Firehose, S3, Glue, Athena, and Terraform to support event-driven architecture and redirect reporting.',
+      'Applied production security practices including URL validation, SSRF protection, ReDoS prevention, audit logging, referer sanitization, path limits, and guarded database update/delete patterns.',
+      'Strengthened engineering discipline through GitHub workflows, documentation, debugging, Testing Library and Vitest coverage, code review feedback, and mentoring incoming IT apprentices.',
     ],
-    tech: ['AWS', 'Terraform', 'JavaScript', 'GitHub', 'Agile'],
+    tech: ['Next.js', 'TypeScript', 'Rust', 'Okta SSO', 'AWS', 'Terraform', 'Kinesis', 'Vitest'],
+    detailPage: '/projects/url-shortener',
   },
   {
     role: 'Robotics Design Lead',
@@ -18,51 +38,35 @@ const experiences = [
     location: 'Moline, Illinois',
     period: 'May 2022 – 2025',
     description: [
-      'Led CAD design and mechanical integration for competitive FTC robotics systems using Onshape, collaborating with programming and manufacturing teams to optimize robot performance, maintainability, and weight distribution.',
-      'Designed drivetrain, intake, launcher, and structural robot systems alongside engineers and mentors from John Deere, Lockheed Martin, Meta, Tesla, Amazon, and Black Hawk College.',
-      'Helped implement Agile/Scrum-style workflows using Trello and Discord task tracking while contributing to STEM outreach, mentoring, and robotics demonstrations across the Quad Cities region.',
-      'Qualified for FTC World Championship in Houston, TX (2024), FTC State Championship (2025), and FTC World Championship in Indianapolis, IN (2026).',
+      'Led CAD design and mechanical integration for competitive FTC robotics systems using Onshape, collaborating with programming and manufacturing teams to optimize robot performance, maintainability, and weight distribution through iterative prototyping and engineering reviews.',
+      'Designed drivetrain, intake, launcher, and structural robot systems while working alongside engineers and mentors from John Deere, Lockheed Martin, Meta, Tesla, Amazon, Black Hawk College, and other STEM organizations.',
+      'Helped implement Agile/Scrum-style workflows using Trello, Discord task tracking, and sprint reviews while contributing to STEM outreach, mentoring, engineering presentations, and robotics demonstrations throughout the Quad Cities region.',
+      'Qualified for the FTC World Championship in Houston, Texas (2024), FTC State Championship competitions (2025), and the FTC World Championship in Indianapolis, Indiana (2026).',
     ],
-    tech: ['Onshape', 'CAD', '3D Printing', 'PETG', 'Agile/Scrum'],
+    tech: ['Onshape', 'CAD', '3D Printing', 'Agile/Scrum'],
   },
 ];
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 bg-slate-950 px-6">
-      <div className="max-w-4xl mx-auto">
-        {/* Section header */}
-        <div className="text-center mb-16">
-          <p className="text-blue-400 font-mono text-sm tracking-widest uppercase mb-2">
-            Where I&apos;ve Worked
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white">Experience</h2>
-          <div className="w-12 h-0.5 bg-blue-500 mx-auto mt-4" />
-        </div>
+    <section id="experience" className="page-section pt-0">
+      <div className="page-container">
+        <Reveal>
+          <div className="mb-12 grid gap-4 md:grid-cols-[0.35fr_1fr] md:items-end">
+            <p className="page-eyebrow">Where I&apos;ve Worked</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">Experience</h2>
+          </div>
+        </Reveal>
 
-        {/* Timeline */}
         <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-slate-700 md:-translate-x-px" />
+          <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-sky-400/70 via-slate-700 to-transparent" />
 
-          <div className="space-y-12">
+          <div className="space-y-6">
             {experiences.map((exp, index) => (
-              <div
-                key={index}
-                className={`relative flex flex-col md:flex-row gap-6 md:gap-12 ${
-                  index % 2 === 0 ? 'md:flex-row-reverse' : ''
-                }`}
-              >
-                {/* Timeline dot */}
-                <div className="absolute left-0 md:left-1/2 w-3 h-3 rounded-full bg-blue-500 border-2 border-slate-950 -translate-x-1 md:-translate-x-1.5 mt-1.5" />
-
-                {/* Empty spacer for alternating layout */}
-                <div className="hidden md:block md:w-1/2" />
-
-                {/* Card */}
-                <div className="ml-6 md:ml-0 md:w-1/2 bg-slate-800 border border-slate-700 rounded-lg p-6 hover:border-blue-500/50 transition-colors">
-                  {/* Period badge */}
-                  <span className="text-blue-400 font-mono text-xs">{exp.period}</span>
+              <Reveal key={exp.role} delay={index * 80}>
+                <article className="relative ml-12 panel-card rounded-2xl p-6 md:p-8 transition hover:-translate-y-1 hover:border-sky-400/50">
+                  <div className="absolute -left-[2.85rem] top-8 h-4 w-4 rounded-full border-2 border-slate-950 bg-sky-400 shadow-[0_0_0_6px_rgba(56,189,248,0.12)]" />
+                  <span className="page-eyebrow text-[10px]">{exp.period}</span>
 
                   <h3 className="text-white font-semibold text-lg mt-1">{exp.role}</h3>
                   <p className="text-slate-400 text-sm mb-4">
@@ -72,25 +76,31 @@ export default function Experience() {
                   <ul className="space-y-2 mb-4">
                     {exp.description.map((point, i) => (
                       <li key={i} className="text-slate-400 text-sm leading-relaxed flex gap-2">
-                        <span className="text-blue-400 mt-1 shrink-0">▹</span>
+                        <span className="text-sky-400 mt-1 shrink-0">▹</span>
                         <span>{point}</span>
                       </li>
                     ))}
                   </ul>
 
-                  {/* Tech stack */}
                   <div className="flex flex-wrap gap-2">
                     {exp.tech.map((t) => (
-                      <span
-                        key={t}
-                        className="px-2.5 py-0.5 bg-blue-900/40 text-blue-300 rounded-full text-xs font-mono border border-blue-800/50"
-                      >
+                      <span key={t} className="pill-tag">
                         {t}
                       </span>
                     ))}
                   </div>
-                </div>
-              </div>
+
+                  {'detailPage' in exp && exp.detailPage ? (
+                    <Link
+                      href={exp.detailPage}
+                      className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-sky-300 hover:text-white transition-colors"
+                    >
+                      View related case study
+                      <FaArrowRight size={11} />
+                    </Link>
+                  ) : null}
+                </article>
+              </Reveal>
             ))}
           </div>
         </div>

@@ -12,13 +12,13 @@ const highlights = [
     icon: <FaMicrochip className="text-blue-400" size={22} />,
     title: 'Engineering',
     description:
-      'Experienced in CAD-driven prototyping using Onshape, 3D printing with PETG, drone systems, embedded electronics, power distribution, and vibration-isolated mechanical design.',
+      'Experienced in CAD-driven prototyping using Onshape, 3D printing, robotics, drone systems, embedded electronics, power distribution, and vibration-aware mechanical design.',
   },
   {
     icon: <FaCode className="text-blue-400" size={22} />,
     title: 'Software',
     description:
-      'Full-stack development with Next.js, React, TypeScript, and tRPC. Rust systems programming. Cloud infrastructure with AWS and Terraform. Database design with MySQL and Drizzle ORM.'
+      'Software development with JavaScript, Python, SQL, Next.js, React, TypeScript, APIs, AWS, Terraform, MySQL, and Drizzle ORM.'
   },
 ];
 
@@ -53,22 +53,22 @@ export default function About() {
           {/* Bio */}
           <div className="space-y-5 text-slate-400 leading-relaxed">
             <p>
-              I&apos;m an engineering student at Black Hawk College combining mechanical design,
-              embedded electronics, and software development to build functional prototypes.
-              My background spans CAD-driven design, drone systems, robotics, and full-stack web
-              development — giving me a unique perspective on how hardware and software work together.
+              I&apos;m an engineering student at Black Hawk College with experience in CAD-driven
+              prototyping, robotics, mechanical design, embedded electronics, and software
+              development. I focus on building functional prototypes that connect hardware,
+              code, and real-world system constraints.
             </p>
             <p>
-              At John Deere I designed and built a production enterprise URL shortening platform
-              using Next.js 16, TypeScript, tRPC, Rust, Drizzle ORM, MySQL, and AWS (Fargate,
-              Kinesis, Terraform) — deployed internally for organization-wide use. As Robotics
-              Design Lead for FTC Team 8813 I led CAD design and
-              mechanical integration, qualifying for the FTC World Championship in Houston, TX (2024)
-              and the FTC World Championship in Indianapolis, IN (2026).
+              At John Deere I develop internal tools and automation workflows using AWS,
+              Terraform, JavaScript, APIs, and event-driven services like Lambda, SNS, and SQS.
+              As Robotics Design Lead for FTC Team 8813, I led CAD design and mechanical
+              integration through iterative prototyping, engineering reviews, and championship-level
+              robotics seasons.
             </p>
             <p>
-              Outside of engineering I enjoy prototyping new ideas, 3D printing, drone building,
-              and working on open-source projects.
+              I&apos;m also founding WebsterLocale, a local website studio and internal operations
+              platform for helping restaurants, barbershops, salons, and service businesses turn
+              online traffic into requests, bookings, and customers.
             </p>
 
             {/* Quick facts */}
