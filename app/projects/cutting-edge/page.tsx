@@ -66,7 +66,7 @@ export default function CuttingEdgePage() {
             href="https://github.com/LeoChimal09/APPOINTMENT_PROJECT"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-sky-500/40 bg-sky-950/40 px-4 py-2 text-sm font-medium text-sky-200 hover:border-sky-300 hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 border-b border-sky-400 pb-2 text-sm font-medium text-sky-200 hover:text-white transition-colors"
           >
             <FaGithub size={14} /> View on GitHub
           </a>
@@ -181,7 +181,7 @@ export default function CuttingEdgePage() {
           </p>
           <Link
             href="/#contact"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-sky-500 hover:bg-sky-400 text-slate-950 rounded-full font-semibold transition-all hover:shadow-lg hover:shadow-sky-500/25"
+            className="inline-flex items-center gap-2 border-b border-sky-400 pb-2 font-semibold text-sky-200 transition-colors hover:text-white"
           >
             Get in touch
           </Link>

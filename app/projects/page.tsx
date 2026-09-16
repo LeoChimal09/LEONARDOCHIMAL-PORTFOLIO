@@ -15,8 +15,8 @@ export default function ProjectsPage() {
       <Navbar />
       <PageIntro
         eyebrow="Project Library"
-        title="Case studies with the signal turned up."
-        description="A focused collection of engineering, product, local-business, and platform work. The strongest projects include deeper case studies so reviewers can inspect the decisions behind the build."
+        title="Software, products, and applied engineering."
+        description="Selected work across technical systems, physical design, and full-stack products."
       />
       <Projects />
       <Contact />

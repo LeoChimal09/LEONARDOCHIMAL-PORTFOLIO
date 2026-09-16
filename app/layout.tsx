@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: 'Leonardo Chimal | Engineering Student, CAD Designer & Software Developer',
+  title: 'Leonardo Chimal | Software Developer & Engineering Student',
   description:
-    'Portfolio of Leonardo Chimal — engineering student at Black Hawk College with experience in CAD-driven prototyping, robotics, mechanical design, embedded electronics, software development, AWS, and Terraform.',
+    'Portfolio of Leonardo Chimal: enterprise and full-stack software, local-business platforms, custom systems, robotics, CAD, and embedded engineering.',
 };
 
 export default function RootLayout({

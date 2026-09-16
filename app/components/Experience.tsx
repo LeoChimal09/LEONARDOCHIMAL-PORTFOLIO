@@ -4,6 +4,17 @@ import Reveal from './Reveal';
 
 const experiences = [
   {
+    role: 'Incoming Part-Time Student Electrical Systems Engineer',
+    company: 'John Deere',
+    location: 'Silvis, Illinois',
+    period: 'Starting September 2026',
+    description: [
+      'Incoming part-time student engineering role focused on electrical systems work and applied technical problem solving within a manufacturing environment.',
+      'Preparing to support engineering operations through structured problem solving, systems thinking, and cross-functional collaboration in a hands-on industrial setting.',
+    ],
+    tech: ['Electrical Systems', 'Manufacturing', 'Problem Solving', 'Systems Thinking'],
+  },
+  {
     role: 'Founder & Full-Stack Developer',
     company: 'WebsterLocale',
     location: 'East Moline, Illinois',
@@ -64,8 +75,8 @@ export default function Experience() {
           <div className="space-y-6">
             {experiences.map((exp, index) => (
               <Reveal key={exp.role} delay={index * 80}>
-                <article className="relative ml-12 panel-card rounded-2xl p-6 md:p-8 transition hover:-translate-y-1 hover:border-sky-400/50">
-                  <div className="absolute -left-[2.85rem] top-8 h-4 w-4 rounded-full border-2 border-slate-950 bg-sky-400 shadow-[0_0_0_6px_rgba(56,189,248,0.12)]" />
+                <article className="relative ml-12 border-t border-slate-700 py-7 transition-colors hover:border-sky-400/70">
+                  <div className="absolute -left-[2.55rem] top-8 h-3 w-3 rotate-45 border border-sky-300 bg-slate-950" />
                   <span className="page-eyebrow text-[10px]">{exp.period}</span>
 
                   <h3 className="text-white font-semibold text-lg mt-1">{exp.role}</h3>
@@ -82,13 +93,9 @@ export default function Experience() {
                     ))}
                   </ul>
 
-                  <div className="flex flex-wrap gap-2">
-                    {exp.tech.map((t) => (
-                      <span key={t} className="pill-tag">
-                        {t}
-                      </span>
-                    ))}
-                  </div>
+                  <p className="border-l border-sky-500/40 pl-3 font-mono text-xs leading-6 text-slate-400">
+                    {exp.tech.join('  /  ')}
+                  </p>
 
                   {'detailPage' in exp && exp.detailPage ? (
                     <Link
