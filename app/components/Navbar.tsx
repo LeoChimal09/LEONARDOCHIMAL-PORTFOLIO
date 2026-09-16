@@ -5,10 +5,8 @@ import { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 const navLinks = [
-  { label: 'About', href: '/#about' },
   { label: 'Projects', href: '/projects' },
   { label: 'Experience', href: '/experience' },
-  { label: 'Skills', href: '/experience#skills' },
   { label: 'Contact', href: '/#contact' },
 ];
 
@@ -28,14 +26,14 @@ export default function Navbar() {
         scrolled ? 'bg-slate-900/95 shadow-lg backdrop-blur-sm' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="relative max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo / Initials */}
         <Link href="/" className="text-white font-bold text-xl tracking-tight font-mono">
           &lt;LC /&gt;
         </Link>
 
         {/* Desktop links */}
-        <div className="hidden md:flex gap-8">
+        <div className="absolute left-1/2 hidden -translate-x-1/2 gap-10 md:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -46,16 +44,6 @@ export default function Navbar() {
             </Link>
           ))}
         </div>
-
-        {/* Resume button */}
-        <a
-          href="/resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden md:inline-flex items-center px-4 py-2 border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white rounded text-sm font-medium transition-colors"
-        >
-          Resume
-        </a>
 
         {/* Mobile menu toggle */}
         <button
@@ -80,14 +68,6 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex justify-center px-4 py-2 border border-blue-500 text-blue-400 rounded text-sm font-medium mt-2"
-          >
-            Resume
-          </a>
         </div>
       )}
     </nav>

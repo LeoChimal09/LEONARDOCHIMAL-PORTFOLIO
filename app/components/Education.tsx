@@ -28,17 +28,18 @@ export default function Education() {
           </div>
         </Reveal>
 
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className="border-b border-slate-800">
           {education.map((item, index) => (
             <Reveal key={item.school} delay={index * 80}>
-              <article className="panel-card-soft h-full rounded-2xl p-6 md:p-8">
-                <p className="page-eyebrow mb-3 text-[10px]">{item.period}</p>
-                <h3 className="text-xl font-bold text-white">{item.school}</h3>
-                <p className="mt-1 text-sm text-slate-400">{item.location}</p>
-                <p className="mt-4 text-sm leading-relaxed text-slate-400">{item.detail}</p>
-                <span className="mt-5 inline-flex rounded-full border border-sky-500/30 bg-sky-950/35 px-3 py-1 text-xs font-mono text-sky-200">
-                  {item.metric}
-                </span>
+              <article className="dossier-row grid gap-4 py-7 md:grid-cols-[4rem_0.85fr_1.15fr_auto] md:items-start">
+                <span className="dossier-index">0{index + 1}</span>
+                <div>
+                  <p className="page-eyebrow mb-2 text-[10px]">{item.period}</p>
+                  <h3 className="text-xl font-bold text-white">{item.school}</h3>
+                  <p className="mt-1 text-sm text-slate-500">{item.location}</p>
+                </div>
+                <p className="text-sm leading-relaxed text-slate-400">{item.detail}</p>
+                <p className="font-mono text-xs text-sky-300 md:text-right">{item.metric}</p>
               </article>
             </Reveal>
           ))}

@@ -102,7 +102,7 @@ export default function UrlShortenerPage() {
         summary="Goes far beyond short links - supporting device-aware redirects, regex-based routing, team ownership, admin governance, audit trails, an async Rust redirect service, and a full analytics pipeline backed by AWS."
         tags={tags}
         actions={(
-          <div className="inline-flex items-center gap-2 bg-slate-900/80 border border-slate-700 rounded-full px-4 py-2 text-slate-400 text-sm font-mono">
+          <div className="inline-flex items-center gap-2 border-l border-slate-600 py-1 pl-3 text-slate-400 text-sm font-mono">
           <FaLock size={11} />
           Internal project — no public repository or live demo
           </div>
