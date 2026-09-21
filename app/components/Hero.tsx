@@ -29,8 +29,8 @@ export default function Hero() {
           </p>
 
           <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-400">
-            Engineering student and John Deere apprentice working across full-stack systems,
-            cloud infrastructure, CAD, robotics, and embedded electronics.
+            Engineering student and John Deere Electrical Systems Engineer Part Time Student
+            working across AI-assisted systems, full-stack software, CAD, robotics, and embedded electronics.
           </p>
 
           <nav aria-label="Homepage sections" className="mt-9 grid border-y border-slate-700/80 sm:grid-cols-4">

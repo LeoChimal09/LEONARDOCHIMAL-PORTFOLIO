@@ -68,8 +68,8 @@ const selectedWork = [
 
 const pathItems = [
   {
-    title: 'Apprentice IT at John Deere',
-    detail: 'Building production internal tools with AWS, Terraform, APIs, event-driven services, analytics, security constraints, and software delivery practices.',
+    title: 'Electrical Systems Engineer Part Time Student at John Deere',
+    detail: 'Improving an AI-assisted system that interprets equipment incidents and routes each case to the appropriate team specialist.',
   },
   {
     title: 'Founder of WebsterLocale',
