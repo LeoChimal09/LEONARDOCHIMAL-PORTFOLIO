@@ -37,7 +37,7 @@ export default function About() {
 
         {/* Profile photo — centered */}
         <div className="flex justify-center mb-12">
-          <div className="relative w-56 h-72 rounded-2xl overflow-hidden border-2 border-slate-700 ring-4 ring-blue-500/20 shadow-xl shadow-blue-900/20">
+          <div className="relative h-72 w-56 overflow-hidden border-y border-sky-400/60">
             <Image
               src="/profile.webp"
               alt="Leonardo Chimal"
@@ -92,18 +92,20 @@ export default function About() {
             </div>
           </div>
 
-          {/* Highlight cards */}
-          <div className="space-y-4">
-            {highlights.map((item) => (
+          <div className="border-b border-slate-800">
+            {highlights.map((item, index) => (
               <div
                 key={item.title}
-                className="bg-slate-800 border border-slate-700 rounded-lg p-5 hover:border-blue-500/50 transition-colors"
+                className="dossier-row grid gap-3 py-5 sm:grid-cols-[2rem_1fr]"
               >
-                <div className="flex items-center gap-3 mb-2">
+                <span className="dossier-index">0{index + 1}</span>
+                <div>
+                  <div className="flex items-center gap-3 mb-2">
                   {item.icon}
                   <h3 className="text-white font-semibold">{item.title}</h3>
+                  </div>
+                  <p className="text-slate-400 text-sm leading-relaxed">{item.description}</p>
                 </div>
-                <p className="text-slate-400 text-sm leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>

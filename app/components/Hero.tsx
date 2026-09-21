@@ -2,111 +2,79 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
-export default function Hero() {
-  const proofPoints = ['Production software', 'Local-business platforms', 'Engineering prototypes'];
+const pageSections = [
+  { label: 'About', href: '#about' },
+  { label: 'Work', href: '#projects' },
+  { label: 'Background', href: '#background' },
+  { label: 'Contact', href: '#contact' },
+];
 
+export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-blue-950 px-6 py-28 relative overflow-hidden"
+      className="flex min-h-[92vh] items-center border-b border-slate-800 px-6 pb-16 pt-28 md:pb-20"
     >
-      {/* Subtle grid background */}
-      <div
-        className="absolute inset-0 opacity-5"
-        style={{
-          backgroundImage:
-            'linear-gradient(#4f8ef7 1px, transparent 1px), linear-gradient(90deg, #4f8ef7 1px, transparent 1px)',
-          backgroundSize: '60px 60px',
-        }}
-      />
+      <div className="page-container grid gap-8 md:grid-cols-[1.05fr_0.75fr] md:items-center lg:gap-12">
+        <div className="min-w-0">
+          <p className="page-eyebrow mb-5">Engineering / Software / Product</p>
 
-      <div className="max-w-4xl text-center relative z-10">
-        <div className="mx-auto mb-8 h-36 w-36 md:h-44 md:w-44 overflow-hidden rounded-full border border-sky-400/40 bg-slate-900 shadow-2xl shadow-sky-950/40 ring-4 ring-slate-950/80">
+          <h1 className="max-w-xl text-6xl font-extrabold leading-[0.88] tracking-tight text-white md:text-7xl lg:text-8xl">
+            <span className="block">Leonardo</span>
+            <span className="block">Chimal</span>
+          </h1>
+
+          <p className="mt-7 max-w-xl text-xl leading-relaxed text-slate-200 md:text-2xl">
+            Building production software, business platforms, and engineering prototypes.
+          </p>
+
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-400">
+            Engineering student and John Deere Electrical Systems Engineer Part Time Student
+            working across AI-assisted systems, full-stack software, CAD, robotics, and embedded electronics.
+          </p>
+
+          <nav aria-label="Homepage sections" className="mt-9 grid border-y border-slate-700/80 sm:grid-cols-4">
+            {pageSections.map((section, index) => (
+              <Link
+                key={section.href}
+                href={section.href}
+                className="group flex items-center gap-3 border-b border-slate-800 py-4 last:border-b-0 sm:border-b-0 sm:border-r sm:px-4 sm:first:pl-0 sm:last:border-r-0"
+              >
+                <span className="dossier-index">0{index + 1}</span>
+                <span className="font-mono text-xs uppercase tracking-[0.12em] text-slate-300 transition-colors group-hover:text-sky-300">
+                  {section.label}
+                </span>
+              </Link>
+            ))}
+          </nav>
+
+          <div className="mt-9 flex flex-wrap items-center gap-x-8 gap-y-4">
+            <Link href="/projects" className="inline-flex items-center border-b border-sky-400 pb-2 font-medium text-white transition-colors hover:text-sky-300">
+              View selected work
+            </Link>
+            <Link href="/#contact" className="inline-flex items-center border-b border-slate-600 pb-2 font-medium text-slate-300 transition-colors hover:border-sky-400 hover:text-white">
+              Start a conversation
+            </Link>
+            <div className="flex items-center gap-5 border-l border-slate-700 pl-6">
+              <a href="https://github.com/LeoChimal09" target="_blank" rel="noopener noreferrer" className="text-slate-400 transition-colors hover:text-white" aria-label="GitHub"><FaGithub size={18} /></a>
+              <a href="https://linkedin.com/in/leonardo-chimal-a442b6267" target="_blank" rel="noopener noreferrer" className="text-slate-400 transition-colors hover:text-sky-300" aria-label="LinkedIn"><FaLinkedin size={18} /></a>
+              <a href="mailto:leochi2565@gmail.com" className="text-slate-400 transition-colors hover:text-sky-300" aria-label="Email"><FaEnvelope size={18} /></a>
+            </div>
+          </div>
+        </div>
+        <figure className="relative aspect-[4/5] w-full max-w-sm justify-self-center overflow-hidden border-y border-slate-700 md:w-[82%] md:justify-self-end lg:w-[78%]">
           <Image
             src="/profile.webp"
-            alt="Leonardo Chimal"
-            width={176}
-            height={176}
-            className="h-full w-full object-cover object-top"
+            alt="Portrait of Leonardo Chimal"
+            fill
+            className="object-cover object-center"
+            sizes="(max-width: 1024px) 100vw, 42vw"
             priority
           />
-        </div>
-
-        <p className="text-blue-400 font-mono text-sm mb-4 tracking-widest uppercase">
-          Hi, I&apos;m
-        </p>
-
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight">
-          Leonardo Chimal
-        </h1>
-
-        <h2 className="text-xl md:text-3xl text-blue-300 font-light mb-6">
-          Building production software, business platforms, and engineering prototypes.
-        </h2>
-
-        <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
-          I&apos;m an engineering student and Apprentice IT at John Deere working across full-stack
-          systems, cloud infrastructure, CAD, robotics, embedded electronics, and local-business
-          product workflows.
-        </p>
-
-        <div className="mx-auto mb-8 grid max-w-3xl gap-3 sm:grid-cols-3">
-          {proofPoints.map((point) => (
-            <div
-              key={point}
-              className="rounded-full border border-sky-500/25 bg-slate-950/55 px-4 py-2 text-xs font-mono uppercase tracking-[0.18em] text-sky-200"
-            >
-              {point}
-            </div>
-          ))}
-        </div>
-
-        {/* CTA buttons */}
-        <div className="flex gap-4 justify-center flex-wrap mb-7">
-          <Link
-            href="/projects"
-            className="px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-full font-medium transition-all hover:shadow-lg hover:shadow-blue-500/25"
-          >
-            View My Work
-          </Link>
-          <Link
-            href="/#contact"
-            className="px-8 py-3 border border-slate-500 hover:border-blue-400 text-slate-300 hover:text-blue-400 rounded-full font-medium transition-all"
-          >
-            Contact Me
-          </Link>
-        </div>
-
-        <div className="mx-auto flex w-fit items-center gap-3 rounded-full border border-slate-700/70 bg-slate-950/45 px-4 py-2 shadow-lg shadow-slate-950/20 backdrop-blur-sm">
-          <span className="hidden sm:inline text-[10px] font-mono uppercase tracking-[0.22em] text-slate-500">
-            Connect
-          </span>
-          <a
-            href="https://github.com/LeoChimal09"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex h-9 w-9 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-slate-800 hover:text-white"
-            aria-label="GitHub"
-          >
-            <FaGithub size={18} />
-          </a>
-          <a
-            href="https://linkedin.com/in/leonardo-chimal-a442b6267"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex h-9 w-9 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-slate-800 hover:text-sky-300"
-            aria-label="LinkedIn"
-          >
-            <FaLinkedin size={18} />
-          </a>
-          <a
-            href="mailto:leochi2565@gmail.com"
-            className="flex h-9 w-9 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-slate-800 hover:text-sky-300"
-            aria-label="Email"
-          >
-            <FaEnvelope size={18} />
-          </a>
-        </div>
+          <figcaption className="absolute bottom-0 left-0 border-t border-slate-700 bg-slate-950/90 px-4 py-3 font-mono text-[10px] uppercase tracking-[0.16em] text-slate-400">
+            Leonardo Chimal / East Moline, Illinois
+          </figcaption>
+        </figure>
       </div>
     </section>
   );

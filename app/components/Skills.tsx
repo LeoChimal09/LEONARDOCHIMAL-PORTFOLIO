@@ -38,20 +38,13 @@ export default function Skills() {
           </div>
         </Reveal>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="border-b border-slate-800">
           {skillCategories.map((cat, index) => (
             <Reveal key={cat.category} delay={index * 60}>
-              <div className="panel-card-soft h-full rounded-2xl p-6 hover:border-sky-400/45 transition-colors">
-                <h3 className="page-eyebrow mb-5 text-[10px]">
-                  {cat.category}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {cat.skills.map((skill) => (
-                    <span key={skill} className="pill-tag">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
+              <div className="dossier-row grid gap-3 py-6 md:grid-cols-[4rem_0.55fr_1.45fr] md:items-baseline">
+                <span className="dossier-index">0{index + 1}</span>
+                <h3 className="font-semibold text-white">{cat.category}</h3>
+                <p className="font-mono text-sm leading-7 text-slate-400">{cat.skills.join('  /  ')}</p>
               </div>
             </Reveal>
           ))}

@@ -49,25 +49,22 @@ export default function CaseStudyHeader({
         </div>
 
         {snapshot.length > 0 ? (
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {snapshot.map((item) => (
-              <div key={item.label} className="panel-card-soft rounded-2xl p-4">
-                <p className="page-eyebrow mb-2 text-[10px]">{item.label}</p>
-                <p className="font-bold text-white">{item.value}</p>
-                <p className="mt-1 text-xs leading-relaxed text-slate-500">{item.note}</p>
+          <dl className="mt-12 grid border-y border-slate-700/70 sm:grid-cols-2 lg:grid-cols-4">
+            {snapshot.map((item, index) => (
+              <div key={item.label} className="border-b border-slate-800 p-4 sm:border-r lg:border-b-0 lg:last:border-r-0">
+                <dt className="dossier-index mb-3">0{index + 1} / {item.label}</dt>
+                <dd className="font-bold text-white">{item.value}</dd>
+                <dd className="mt-1 text-xs leading-relaxed text-slate-500">{item.note}</dd>
               </div>
             ))}
-          </div>
+          </dl>
         ) : null}
 
         {tags.length > 0 ? (
-          <div className="mt-8 flex flex-wrap gap-2">
-            {tags.map((tag) => (
-              <span key={tag} className="pill-tag">
-                {tag}
-              </span>
-            ))}
-          </div>
+          <p className="mt-8 max-w-4xl font-mono text-xs leading-7 text-slate-400">
+            <span className="mr-3 text-sky-400">STACK /</span>
+            {tags.join('  /  ')}
+          </p>
         ) : null}
 
         <div className="accent-line mt-12" />
