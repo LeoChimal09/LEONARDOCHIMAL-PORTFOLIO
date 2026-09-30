@@ -4,6 +4,20 @@ import Reveal from './Reveal';
 
 const projects = [
   {
+    title: 'LowDura — Local Gameplay Video Editor',
+    category: 'software',
+    description:
+      'Local-first video review tool that finds dialogue sections in long gameplay recordings and turns approved moments into YouTube and Shorts cuts.',
+    techGroups: {
+      engineering: [],
+      cs: ['Next.js 16', 'TypeScript', 'FFmpeg', 'Bun', 'Audio Analysis'],
+    },
+    github: '',
+    live: '',
+    detailPage: '/projects/lowdura',
+    featured: true,
+  },
+  {
     title: 'Discord AI Dungeon Master & NPC Bot',
     category: 'software',
     description:

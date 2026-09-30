@@ -1,8 +1,7 @@
 import LightboxImage from '@/app/components/LightboxImage';
 import CaseStudyHeader from '@/app/components/CaseStudyHeader';
-import Link from 'next/link';
 import type { Metadata } from 'next';
-import { FaArrowLeft, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 
 export const metadata: Metadata = {
   title: 'Meta Quest Slide-Lock Attachment | Leonardo Chimal',
@@ -130,21 +129,6 @@ export default function MetaQuestPage() {
         </div>
       </section>
 
-      {/* Footer nav */}
-      <div className="page-container px-6 pb-20 flex justify-between items-center border-t border-slate-800 pt-8">
-        <Link
-          href="/projects/drone"
-          className="inline-flex items-center gap-2 text-slate-400 hover:text-sky-300 transition-colors text-sm"
-        >
-          <FaArrowLeft size={12} /> Prev: AI Drone Platform
-        </Link>
-        <Link
-          href="/projects"
-          className="text-sm text-sky-300 hover:text-white transition-colors"
-        >
-          Back to Projects →
-        </Link>
-      </div>
     </main>
   );
 }
