@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import CaseStudyHeader from '@/app/components/CaseStudyHeader';
-import Link from 'next/link';
-import { FaArrowLeft, FaBookOpen, FaShieldAlt, FaUsers } from 'react-icons/fa';
+import { FaBookOpen, FaShieldAlt, FaUsers } from 'react-icons/fa';
 
 export const metadata: Metadata = {
   title: 'Discord AI Dungeon Master & NPC Bot | Leonardo Chimal',
@@ -176,11 +175,6 @@ export default function DiscordNpcPage() {
         </div>
       </section>
 
-      <div className="page-container px-6 pb-20 flex justify-between items-center border-t border-slate-800 pt-8">
-        <Link href="/projects" className="inline-flex items-center gap-2 text-slate-400 hover:text-sky-300 transition-colors text-sm">
-          <FaArrowLeft size={12} /> Back to Projects
-        </Link>
-      </div>
     </main>
   );
 }

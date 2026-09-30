@@ -23,6 +23,13 @@ const profileFacts = [
 
 const selectedWork = [
   {
+    label: 'Local Creator Tool',
+    title: 'LowDura',
+    description: 'A local-first workflow that analyzes long gameplay recordings, surfaces dialogue sections for review, and exports approved YouTube and Shorts cuts.',
+    href: '/projects/lowdura',
+    tags: ['Next.js 16', 'TypeScript', 'FFmpeg', 'Bun'],
+  },
+  {
     label: 'Production System',
     title: 'Enterprise URL Shortening Platform',
     description: 'A John Deere internal platform with Next.js, Rust, Okta SSO, MySQL, AWS analytics, Terraform, governance, security checks, and test coverage.',

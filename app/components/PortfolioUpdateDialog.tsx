@@ -4,13 +4,13 @@ import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { FaArrowRight, FaTimes } from 'react-icons/fa';
 
-const updateVersion = '2026-09-16';
+const updateVersion = '2026-09-30';
 const storageKey = `portfolio-update-seen:${updateVersion}`;
 
 const highlights = [
-  'New Discord Soundboard and AI Dungeon Master case studies',
-  'Expanded software, business platform, and engineering project coverage',
-  'New project screenshots and faster section navigation',
+  'LowDura: a local-first tool for finding dialogue sections in long gameplay recordings',
+  'Review and approve clips, then export YouTube and Shorts cuts with FFmpeg',
+  'New LowDura project page with workflow details and source code',
 ];
 
 export default function PortfolioUpdateDialog() {
@@ -63,7 +63,7 @@ export default function PortfolioUpdateDialog() {
         onMouseDown={(event) => event.stopPropagation()}
       >
         <div className="mb-5 flex min-h-9 items-center justify-between gap-5">
-          <p className="page-eyebrow">Portfolio Update / 09.16.2026</p>
+          <p className="page-eyebrow">Portfolio Update / 09.30.2026</p>
           <button
             ref={closeButtonRef}
             type="button"
@@ -80,7 +80,7 @@ export default function PortfolioUpdateDialog() {
           Here&apos;s what I&apos;ve been working on.
         </h2>
         <p className="mt-4 max-w-lg text-sm leading-relaxed text-slate-400">
-          This update adds new full-stack systems, deeper case studies, and a clearer view of my work across software and engineering.
+          I built LowDura after realizing hours of captured gameplay were difficult to edit into something worth sharing. It finds sections with speech and activity so I can review the moments that matter.
         </p>
 
         <ol className="mt-6 border-b border-slate-800">
