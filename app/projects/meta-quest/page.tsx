@@ -58,7 +58,7 @@ export default function MetaQuestPage() {
             href="https://makerworld.com/en/models/2835479-meta-quest-3-controller-gun-attachment"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-sky-500/40 bg-sky-950/40 px-4 py-2 text-sm font-medium text-sky-200 hover:border-sky-300 hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 border-b border-sky-400 pb-2 text-sm font-medium text-sky-200 hover:text-white transition-colors"
           >
             View on MakerWorld <FaExternalLinkAlt size={12} />
           </a>

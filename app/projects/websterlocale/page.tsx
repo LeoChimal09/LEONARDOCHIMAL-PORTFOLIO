@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import CaseStudyHeader from '@/app/components/CaseStudyHeader';
+import LightboxImage from '@/app/components/LightboxImage';
 import {
   FaArrowLeft,
   FaBriefcase,
@@ -132,7 +133,7 @@ export default function WebsterLocalePage() {
             href="https://websterlocale-production.up.railway.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-sky-500/40 bg-sky-950/40 px-4 py-2 text-sm font-medium text-sky-200 hover:border-sky-300 hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 border-b border-sky-400 pb-2 text-sm font-medium text-sky-200 hover:text-white transition-colors"
           >
             Live WebsterLocale Site
             <FaExternalLinkAlt size={12} />
@@ -142,7 +143,27 @@ export default function WebsterLocalePage() {
 
       <section className="page-section pt-0">
         <div className="page-container">
-          <span className="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/80 px-4 py-2 text-sm text-slate-400 mb-8">
+          <p className="page-eyebrow mb-2">Product View</p>
+          <h2 className="mb-6 text-2xl font-bold text-white">WebsterLocale Public Site</h2>
+          <figure className="border-y border-slate-700 py-5">
+            <LightboxImage
+              src="/projects/websterlocale/websterlocale-home.png"
+              alt="WebsterLocale homepage presenting custom websites and local-business systems"
+              imageClassName="object-cover object-top"
+              wrapperClassName="overflow-hidden bg-slate-900"
+              wrapperStyle={{ aspectRatio: '1571 / 946' }}
+              sizes="(max-width: 1152px) 100vw, 1152px"
+            />
+            <figcaption className="mt-3 font-mono text-xs text-slate-500">
+              Service-led homepage connecting the studio offer to a working restaurant platform.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section className="page-section pt-0">
+        <div className="page-container">
+          <span className="mb-8 inline-flex items-center gap-2 border-l border-slate-600 py-1 pl-3 text-sm text-slate-400">
             <FaRocket size={12} />
             Production + development Railway workflow
           </span>

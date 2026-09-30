@@ -1,0 +1,15 @@
+{
+  "servers": {
+    "mcp-intelligence-context": {
+      "type": "stdio",
+      "command": "/home/iuubnp2/.vscode-server/data/User/globalStorage/leochimal09.mcp-intelligence-context/.venv/bin/python",
+      "args": [
+        "-m",
+        "mcp_intelligence_context.server"
+      ],
+      "env": {
+        "MCP_INTEL_REPO_ROOT": "/home/iuubnp2/Projects/LEONARDOCHIMAL-PORTFOLIO"
+      }
+    }
+  }
+}

@@ -4,6 +4,18 @@ import Reveal from './Reveal';
 
 const experiences = [
   {
+    role: 'Electrical Systems Engineer Part Time Student',
+    company: 'John Deere',
+    location: 'Silvis, Illinois',
+    period: 'September 2026 – Present',
+    description: [
+      'Developing and improving an AI-assisted incident management tool for equipment issues reported by John Deere buyers, including incidents involving combines and other machines.',
+      'Enhancing the existing system so it can interpret each incident, identify the underlying issue, and route the case to the appropriate specialist on the team.',
+      'Updating a tool that has been in development for approximately one year, with a focus on improving its reliability, incident understanding, and assignment workflow.',
+    ],
+    tech: ['AI Systems', 'Incident Triage', 'Workflow Routing', 'Equipment Support'],
+  },
+  {
     role: 'Founder & Full-Stack Developer',
     company: 'WebsterLocale',
     location: 'East Moline, Illinois',
@@ -17,10 +29,10 @@ const experiences = [
     tech: ['Next.js 16', 'TypeScript', 'Drizzle ORM', 'MySQL', 'NextAuth', 'Railway'],
   },
   {
-    role: 'Apprentice IT',
+    role: 'IT Apprentice',
     company: 'John Deere',
     location: 'Moline, Illinois',
-    period: 'June 2024 – Present',
+    period: 'June 2024 – September 2026',
     description: [
       'Developed internal tools and automation workflows using AWS, Terraform, JavaScript, and API integrations to support scalable backend systems and reduce manual processes.',
       'Designed and deployed a production-grade internal URL shortening platform with multiple URL types, metadata tracking, vanity and pattern redirects, admin governance, QR generation, and backend performance improvements.',
@@ -36,7 +48,7 @@ const experiences = [
     role: 'Robotics Design Lead',
     company: 'First Tech Challenge — Team 8813',
     location: 'Moline, Illinois',
-    period: 'May 2022 – 2025',
+    period: 'May 2022 – May 2025',
     description: [
       'Led CAD design and mechanical integration for competitive FTC robotics systems using Onshape, collaborating with programming and manufacturing teams to optimize robot performance, maintainability, and weight distribution through iterative prototyping and engineering reviews.',
       'Designed drivetrain, intake, launcher, and structural robot systems while working alongside engineers and mentors from John Deere, Lockheed Martin, Meta, Tesla, Amazon, Black Hawk College, and other STEM organizations.',
@@ -64,8 +76,8 @@ export default function Experience() {
           <div className="space-y-6">
             {experiences.map((exp, index) => (
               <Reveal key={exp.role} delay={index * 80}>
-                <article className="relative ml-12 panel-card rounded-2xl p-6 md:p-8 transition hover:-translate-y-1 hover:border-sky-400/50">
-                  <div className="absolute -left-[2.85rem] top-8 h-4 w-4 rounded-full border-2 border-slate-950 bg-sky-400 shadow-[0_0_0_6px_rgba(56,189,248,0.12)]" />
+                <article className="relative ml-12 border-t border-slate-700 py-7 transition-colors hover:border-sky-400/70">
+                  <div className="absolute -left-[2.55rem] top-8 h-3 w-3 rotate-45 border border-sky-300 bg-slate-950" />
                   <span className="page-eyebrow text-[10px]">{exp.period}</span>
 
                   <h3 className="text-white font-semibold text-lg mt-1">{exp.role}</h3>
@@ -82,13 +94,9 @@ export default function Experience() {
                     ))}
                   </ul>
 
-                  <div className="flex flex-wrap gap-2">
-                    {exp.tech.map((t) => (
-                      <span key={t} className="pill-tag">
-                        {t}
-                      </span>
-                    ))}
-                  </div>
+                  <p className="border-l border-sky-500/40 pl-3 font-mono text-xs leading-6 text-slate-400">
+                    {exp.tech.join('  /  ')}
+                  </p>
 
                   {'detailPage' in exp && exp.detailPage ? (
                     <Link

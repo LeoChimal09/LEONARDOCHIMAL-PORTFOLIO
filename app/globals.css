@@ -54,6 +54,11 @@ body::before {
   transform: translateY(0);
 }
 
+:target .reveal-up {
+  opacity: 1;
+  transform: none;
+}
+
 .page-shell {
   min-height: 100vh;
   background: transparent;
@@ -91,24 +96,43 @@ body::before {
 }
 
 .panel-card {
-  border: 1px solid var(--border);
-  background: linear-gradient(180deg, rgba(21, 28, 45, 0.88), rgba(10, 15, 30, 0.92));
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+  position: relative;
+  border: 0;
+  border-top: 1px solid rgba(56, 189, 248, 0.5);
+  border-bottom: 1px solid var(--border);
+  border-radius: 0 !important;
+  background: linear-gradient(90deg, rgba(56, 189, 248, 0.055), transparent 48%);
+  box-shadow: none;
 }
 
 .panel-card-soft {
-  border: 1px solid var(--border);
-  background: rgba(15, 23, 42, 0.68);
+  border: 0;
+  border-top: 1px solid var(--border);
+  border-radius: 0 !important;
+  background: transparent;
+  box-shadow: none;
 }
 
-.pill-tag {
-  border: 1px solid rgba(56, 189, 248, 0.28);
-  background: rgba(8, 47, 73, 0.35);
-  color: #bae6fd;
-  border-radius: 999px;
-  padding: 0.25rem 0.65rem;
+.dossier-rule {
+  border-top: 1px solid var(--border);
+}
+
+.dossier-row {
+  position: relative;
+  border-top: 1px solid var(--border);
+  transition: border-color 180ms ease, background-color 180ms ease;
+}
+
+.dossier-row:hover {
+  border-color: rgba(56, 189, 248, 0.55);
+  background: linear-gradient(90deg, rgba(56, 189, 248, 0.045), transparent 58%);
+}
+
+.dossier-index {
+  color: rgba(56, 189, 248, 0.75);
   font-family: var(--font-geist-mono), monospace;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
 }
 
 .accent-line {

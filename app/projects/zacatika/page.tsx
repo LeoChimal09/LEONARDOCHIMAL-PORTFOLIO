@@ -1,4 +1,5 @@
 import CaseStudyHeader from '@/app/components/CaseStudyHeader';
+import LightboxImage from '@/app/components/LightboxImage';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import {
@@ -133,7 +134,7 @@ const learningHighlights = [
 ];
 
 const nextSteps = [
-  'Add production screenshots to this case study as the Zacatika UI stabilizes across desktop and mobile.',
+  'Document the checkout, order tracking, and owner dashboard flows as those production surfaces evolve.',
   'Finish the Stripe payment path and connect payment state back into order status updates.',
   'Expand reporting into clearer owner metrics: revenue by day, popular items, cancellation reasons, and reservation conversion.',
   'Package the restaurant platform as a repeatable WebsterLocale template for future restaurant clients.',
@@ -154,13 +155,48 @@ export default function ZacatikaPage() {
             href="https://restaurantproject-production-630b.up.railway.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-sky-500/40 bg-sky-950/40 px-4 py-2 text-sm font-medium text-sky-200 hover:border-sky-300 hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 border-b border-sky-400 pb-2 text-sm font-medium text-sky-200 hover:text-white transition-colors"
           >
             Live Zacatika Site
             <FaExternalLinkAlt size={12} />
           </a>
         )}
       />
+
+      <section className="page-section pt-0">
+        <div className="page-container">
+          <p className="page-eyebrow mb-2">Product Views</p>
+          <h2 className="mb-6 text-2xl font-bold text-white">Guest Experience</h2>
+          <div className="grid gap-6 border-y border-slate-700 py-5 lg:grid-cols-2">
+            <figure>
+              <LightboxImage
+                src="/projects/zacatika/zacatika-home.png"
+                alt="Zacatika restaurant homepage with navigation, live hours, and guest actions"
+                imageClassName="object-cover object-top"
+                wrapperClassName="overflow-hidden bg-slate-900"
+                wrapperStyle={{ aspectRatio: '1906 / 947' }}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <figcaption className="mt-3 font-mono text-xs text-slate-500">
+                Brand-led homepage with menu, order, reservation, and live-hours entry points.
+              </figcaption>
+            </figure>
+            <figure>
+              <LightboxImage
+                src="/projects/zacatika/zacatika-menu.png"
+                alt="Zacatika menu page with categories and online ordering items"
+                imageClassName="object-cover object-top"
+                wrapperClassName="overflow-hidden bg-slate-900"
+                wrapperStyle={{ aspectRatio: '1906 / 947' }}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <figcaption className="mt-3 font-mono text-xs text-slate-500">
+                Category-based menu browsing designed to lead directly into online ordering.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
 
       <section className="page-section pt-0">
         <div className="page-container">

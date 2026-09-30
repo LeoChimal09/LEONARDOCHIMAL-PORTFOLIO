@@ -1,6 +1,6 @@
 # Leonardo Chimal — Portfolio
 
-Personal portfolio website for Leonardo Chimal, engineering student at Black Hawk College and CS developer. Built with Next.js 16, React 19, TypeScript, and Tailwind CSS v4.
+Personal portfolio website for Leonardo Chimal, a software developer and engineering student working across production and custom software, local-business platforms, robotics, and CAD-driven design. Built with Next.js 16, React 19, TypeScript, and Tailwind CSS v4.
 
 ## Stack
 
@@ -31,17 +31,25 @@ app/
   components/
     Navbar.tsx
     Hero.tsx
-    About.tsx
+    HomeOverview.tsx
+    PageIntro.tsx
+    CaseStudyHeader.tsx
     Experience.tsx
+    Education.tsx
     Skills.tsx
     Projects.tsx
     Contact.tsx
+    Reveal.tsx
     LightboxImage.tsx  # Fullscreen image lightbox (client component)
   projects/
     drone/            # Autonomous AI Drone Platform case study
     meta-quest/       # Meta Quest SlideLock Attachment case study
     cutting-edge/     # Cutting Edge Appointments case study
     url-shortener/    # Enterprise URL Shortening Platform case study
+    discord-npc/      # Discord AI Dungeon Master & NPC Bot case study
+    discord-soundboard/ # Discord Soundboard Admin case study
+    websterlocale/    # WebsterLocale case study
+    zacatika/         # Zacatika Restaurant Platform case study
 public/
   resume.pdf
   profile.webp
@@ -49,6 +57,11 @@ public/
     drone/            # CAD render images
     meta-quest/       # Photos and CAD renders
     cutting-edge/     # App screenshots
+    url-shortener/    # Platform screenshots
+    discord-npc/      # Bot and session screenshots
+    discord-soundboard/ # Admin and bot screenshots
+    websterlocale/    # Platform screenshots
+    zacatika/         # Restaurant platform screenshots
 ```
 
 ## Commands
