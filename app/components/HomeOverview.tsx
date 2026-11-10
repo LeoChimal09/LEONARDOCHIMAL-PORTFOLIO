@@ -23,6 +23,13 @@ const profileFacts = [
 
 const selectedWork = [
   {
+    label: 'Personal Assistant',
+    title: 'Epiphany',
+    description: 'A personal assistant I built and rely on to manage competing commitments, plan ahead, and stay on track with consistent check-ins and well-being awareness.',
+    href: '/projects/epiphany',
+    tags: ['Conversational Planning', 'Discord', 'Google Calendar'],
+  },
+  {
     label: 'Local Creator Tool',
     title: 'LowDura',
     description: 'A local-first workflow that analyzes long gameplay recordings, surfaces dialogue sections for review, and exports approved YouTube and Shorts cuts.',

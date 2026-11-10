@@ -8,6 +8,7 @@ const projectGroups = [
   {
     label: 'Software + AI / Technical Systems',
     projects: [
+      { title: 'Epiphany', href: '/projects/epiphany' },
       { title: 'LowDura', href: '/projects/lowdura' },
       { title: 'Discord AI Dungeon Master & NPC Bot', href: '/projects/discord-npc' },
       { title: 'Discord Soundboard Admin', href: '/projects/discord-soundboard' },
