@@ -4,13 +4,13 @@ import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { FaArrowRight, FaTimes } from 'react-icons/fa';
 
-const updateVersion = '2026-09-30';
+const updateVersion = '2026-11-10';
 const storageKey = `portfolio-update-seen:${updateVersion}`;
 
 const highlights = [
-  'LowDura: a local-first tool for finding dialogue sections in long gameplay recordings',
-  'Review and approve clips, then export YouTube and Shorts cuts with FFmpeg',
-  'New LowDura project page with workflow details and source code',
+  'Meet Epiphany, my personal assistant, with a new case study, screenshots, and public GitHub repository',
+  'Explore LowDura, my local-first gameplay review tool for exporting YouTube and Shorts cuts',
+  'Updated United Township education with club involvement and academic honors',
 ];
 
 export default function PortfolioUpdateDialog() {
@@ -63,7 +63,7 @@ export default function PortfolioUpdateDialog() {
         onMouseDown={(event) => event.stopPropagation()}
       >
         <div className="mb-5 flex min-h-9 items-center justify-between gap-5">
-          <p className="page-eyebrow">Portfolio Update / 09.30.2026</p>
+          <p className="page-eyebrow">Portfolio Update / 11.10.2026</p>
           <button
             ref={closeButtonRef}
             type="button"
@@ -80,7 +80,7 @@ export default function PortfolioUpdateDialog() {
           Here&apos;s what I&apos;ve been working on.
         </h2>
         <p className="mt-4 max-w-lg text-sm leading-relaxed text-slate-400">
-          I built LowDura after realizing hours of captured gameplay were difficult to edit into something worth sharing. It finds sections with speech and activity so I can review the moments that matter.
+          Explore Epiphany and LowDura, two tools I built around everyday needs, along with my updated education and involvement.
         </p>
 
         <ol className="mt-6 border-b border-slate-800">
@@ -94,11 +94,11 @@ export default function PortfolioUpdateDialog() {
 
         <div className="mt-6 grid sm:grid-cols-2">
           <Link
-            href="/projects"
+            href="/projects/epiphany"
             onClick={() => setOpen(false)}
             className="flex min-h-12 items-center justify-between gap-3 border-b border-sky-400 pr-4 text-sm font-medium text-white transition-colors hover:text-sky-300"
           >
-            Explore the updates
+            Meet Epiphany
             <FaArrowRight className="shrink-0" size={12} />
           </Link>
           <button

@@ -33,7 +33,7 @@ export default function Contact() {
           <div className="mt-8 flex flex-col gap-2 border-t border-slate-800 pt-5 font-mono text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between">
             <p>Designed &amp; Built by Leonardo Chimal &mdash; 2026</p>
             <p>
-              Last updated &mdash; <time dateTime="2026-09-16">9/16/2026</time>
+              Last updated &mdash; <time dateTime="2026-11-10">11/10/2026</time>
             </p>
           </div>
         </div>
