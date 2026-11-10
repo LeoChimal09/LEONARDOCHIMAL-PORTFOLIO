@@ -1,8 +1,7 @@
 import LightboxImage from '@/app/components/LightboxImage';
 import CaseStudyHeader from '@/app/components/CaseStudyHeader';
-import Link from 'next/link';
 import type { Metadata } from 'next';
-import { FaArrowLeft, FaCheckCircle, FaMicrochip, FaProjectDiagram, FaTools } from 'react-icons/fa';
+import { FaCheckCircle, FaMicrochip, FaProjectDiagram, FaTools } from 'react-icons/fa';
 
 export const metadata: Metadata = {
   title: 'Autonomous AI Drone Platform | Leonardo Chimal',
@@ -347,21 +346,6 @@ export default function DronePage() {
         </div>
       </section>
 
-      {/* Footer nav */}
-      <div className="page-container px-6 pb-20 flex justify-between items-center border-t border-slate-800 pt-8">
-        <Link
-          href="/projects"
-          className="inline-flex items-center gap-2 text-slate-400 hover:text-sky-300 transition-colors text-sm"
-        >
-          <FaArrowLeft size={12} /> Back to Projects
-        </Link>
-        <Link
-          href="/projects/meta-quest"
-          className="text-sm text-sky-300 hover:text-white transition-colors"
-        >
-          Next Project: Meta Quest Slide-Lock →
-        </Link>
-      </div>
     </main>
   );
 }

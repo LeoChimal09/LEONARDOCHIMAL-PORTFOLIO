@@ -8,8 +8,8 @@ const updateVersion = '2026-11-10';
 const storageKey = `portfolio-update-seen:${updateVersion}`;
 
 const highlights = [
-  'Meet Epiphany, my personal assistant for planning, check-ins, and everyday commitments',
-  'New Epiphany case study with screenshots and a public GitHub repository',
+  'Meet Epiphany, my personal assistant, with a new case study, screenshots, and public GitHub repository',
+  'Explore LowDura, my local-first gameplay review tool for exporting YouTube and Shorts cuts',
   'Updated United Township education with club involvement and academic honors',
 ];
 
@@ -80,7 +80,7 @@ export default function PortfolioUpdateDialog() {
           Here&apos;s what I&apos;ve been working on.
         </h2>
         <p className="mt-4 max-w-lg text-sm leading-relaxed text-slate-400">
-          Meet the personal assistant I built and rely on, explore its case study and source code, and see my updated education and involvement.
+          Explore Epiphany and LowDura, two tools I built around everyday needs, along with my updated education and involvement.
         </p>
 
         <ol className="mt-6 border-b border-slate-800">

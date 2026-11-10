@@ -1,7 +1,6 @@
-import Link from 'next/link';
 import type { Metadata } from 'next';
 import CaseStudyHeader from '@/app/components/CaseStudyHeader';
-import { FaArrowLeft, FaLock } from 'react-icons/fa';
+import { FaLock } from 'react-icons/fa';
 
 export const metadata: Metadata = {
   title: 'Enterprise URL Shortening Platform | Leonardo Chimal',
@@ -302,16 +301,6 @@ export default function UrlShortenerPage() {
         </div>
       </section>
 
-      {/* Footer nav */}
-      <div className="page-container px-6 py-12">
-        <Link
-          href="/projects"
-          className="inline-flex items-center gap-2 text-slate-400 hover:text-sky-300 transition-colors text-sm font-mono"
-        >
-          <FaArrowLeft size={12} />
-          Back to projects
-        </Link>
-      </div>
     </main>
   );
 }

@@ -45,6 +45,15 @@ export default function Navbar() {
           ))}
         </div>
 
+        <a
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden border border-sky-400 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-sky-400/10 md:inline-flex"
+        >
+          Resume
+        </a>
+
         {/* Mobile menu toggle */}
         <button
           className="md:hidden text-white"
@@ -68,6 +77,14 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-sky-400 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-sky-400/10"
+          >
+            Resume
+          </a>
         </div>
       )}
     </nav>
