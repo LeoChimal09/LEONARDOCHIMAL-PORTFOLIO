@@ -23,6 +23,13 @@ const profileFacts = [
 
 const selectedWork = [
   {
+    label: 'Personal Assistant',
+    title: 'Epiphany',
+    description: 'A personal assistant I built and rely on to manage competing commitments, plan ahead, and stay on track with consistent check-ins and well-being awareness.',
+    href: '/projects/epiphany',
+    tags: ['Conversational Planning', 'Discord', 'Google Calendar'],
+  },
+  {
     label: 'Production System',
     title: 'Enterprise URL Shortening Platform',
     description: 'A John Deere internal platform with Next.js, Rust, Okta SSO, MySQL, AWS analytics, Terraform, governance, security checks, and test coverage.',

@@ -4,6 +4,20 @@ import Reveal from './Reveal';
 
 const projects = [
   {
+    title: 'Epiphany Personal Assistant',
+    category: 'software',
+    description:
+      'A personal assistant I rely on to see my schedule clearly, plan ahead, and manage multiple commitments through consistent check-ins and well-being awareness.',
+    techGroups: {
+      engineering: [],
+      cs: ['Conversational Assistant', 'Discord', 'Google Calendar'],
+    },
+    github: 'https://github.com/LeoChimal09/Epiphany',
+    live: '',
+    detailPage: '/projects/epiphany',
+    featured: true,
+  },
+  {
     title: 'Discord AI Dungeon Master & NPC Bot',
     category: 'software',
     description:
@@ -195,17 +209,17 @@ export default function Projects() {
                     <Reveal key={project.title} delay={index * 70}>
                       <article className="dossier-row group h-full py-6 transition-colors">
                         <div className="mb-4 flex items-start justify-between gap-5">
-                          <h3 className="text-xl font-bold text-white tracking-tight group-hover:text-sky-200 transition-colors">
+                          <h3 className="min-w-0 flex-1 text-xl leading-8 font-bold text-white tracking-tight group-hover:text-sky-200 transition-colors">
                             {project.title}
                           </h3>
-                          <div className="flex gap-4 pt-1">
+                          <div className="flex shrink-0 items-center gap-2">
                             {project.github && (
-                              <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors" aria-label={`${project.title} on GitHub`}>
+                              <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex size-8 items-center justify-center rounded text-slate-400 hover:bg-slate-800 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-400 transition-colors" aria-label={`${project.title} on GitHub`}>
                                 <FaGithub size={20} />
                               </a>
                             )}
                             {project.live && (
-                              <a href={project.live} target="_blank" rel="noopener noreferrer" className={`transition-colors ${project.techGroups.engineering.length > 0 ? 'text-amber-400/75 hover:text-amber-300' : 'text-slate-400 hover:text-sky-300'}`} aria-label={`${project.title} live site`}>
+                              <a href={project.live} target="_blank" rel="noopener noreferrer" className={`inline-flex size-8 items-center justify-center rounded hover:bg-slate-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-400 transition-colors ${project.techGroups.engineering.length > 0 ? 'text-amber-400/75 hover:text-amber-300' : 'text-slate-400 hover:text-sky-300'}`} aria-label={`${project.title} live site`}>
                                 {project.techGroups.engineering.length > 0 ? <FaWrench size={17} /> : <FaExternalLinkAlt size={18} />}
                               </a>
                             )}
@@ -216,7 +230,7 @@ export default function Projects() {
                         <div className="mb-5 flex flex-col gap-2">
                           {project.techGroups.engineering.length > 0 && (
                             <div className="flex items-start gap-2 border-l border-amber-500/40 pl-3">
-                              <FaCog size={10} className="text-amber-500 shrink-0" />
+                              <FaCog size={12} className="mt-1 text-amber-500 shrink-0" />
                               <p className="font-mono text-xs leading-relaxed text-amber-200">
                                 {project.techGroups.engineering.join(' / ')}
                               </p>
@@ -224,7 +238,7 @@ export default function Projects() {
                           )}
                           {project.techGroups.cs.length > 0 && (
                             <div className="flex items-start gap-2 border-l border-sky-500/40 pl-3">
-                              <FaCode size={10} className="text-blue-400 shrink-0" />
+                              <FaCode size={12} className="mt-1 text-blue-400 shrink-0" />
                               <p className="font-mono text-xs leading-relaxed text-sky-200">
                                 {project.techGroups.cs.join(' / ')}
                               </p>
